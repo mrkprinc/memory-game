@@ -3,25 +3,35 @@ import Card from "./components/Card";
 import images from "./images.json";
 
 class App extends Component {
+  state = {
+    score: 0,
+    front: [],
+    back: [],
+    order: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  };
+
   handleClick(e) {
     document.querySelectorAll('.card').forEach(element => {
       element.classList.toggle('flip');
     })
   }
+
   render() {
     return (
       <main className='center'>
         <header>Memory Game</header>
 
         <section id='cards'>
-          {images.map((image, i) => {
+          {this.state.order.map((shuffledIndex, i) => {
             return (<Card 
-              frontText='here is the front' 
-              backText='here is the back' 
+              frontImgId={i}
+              backImgId={shuffledIndex} 
               index={i} 
+              key={images[shuffledIndex].id}
               handleClick={this.handleClick}>
                 {this.props.children}
-              </Card>)
+              </Card>
+            )
           })}
         </section>
         

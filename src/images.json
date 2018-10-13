@@ -1,29 +1,47 @@
 [
   {
-    "text": 1
+    "id": 0,
+    "text": "Cairo",
+    "src": "./images/cairo.jpeg"
   },
   {
-    "text": 2
+    "id": 1,
+    "text": "Chicago",
+    "src": "./images/chicago.jpeg"
   },
   {
-    "text": 3
+    "id": 2,
+    "text": "London",
+    "src": "./images/london.jpeg"
   },
   {
-    "text": 4
+    "id": 3,
+    "text": "Moscow",
+    "src": "./images/moscow.jpeg"
   },
   {
-    "text": 5
+    "id": 4,
+    "text": "New York City",
+    "src": "./images/nyc.jpeg"
   },
   {
-    "text": 6
+    "id": 5,
+    "text": "Paris",
+    "src": "./images/paris.jpeg"
   },
   {
-    "text": 7
+    "id": 6,
+    "text": "San Francisco",
+    "src": "./images/sanfran.jpeg"
   },
   {
-    "text": 8
+    "id": 7,
+    "text": "Agra",
+    "src": "./images/tajmahal.png"
   },
   {
-    "text": 9
+    "id": 8,
+    "text": "Venice",
+    "src": "./images/venice.jpeg"
   }
 ]
