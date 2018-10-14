@@ -16,10 +16,7 @@ class App extends Component {
     if(this.state.guessed[clickedImg]) {
       this.badClick();
     } else {
-      this.setState(prevState => {
-        prevState.guessed[clickedImg] = true;
-        return {guessed: prevState.guessed};
-      })
+      this.goodClick(clickedImg);
     }
     this.shuffleBackSide();
     this.flipCards();
@@ -30,9 +27,18 @@ class App extends Component {
     this.setState({[backSide]: this.shuffleArray()});
   }
 
+  goodClick(clickedImg) {
+    document.getElementById('msg').innerHTML = "Don't click the same image twice!";
+    this.setState(prevState => {
+      prevState.guessed[clickedImg] = true;
+      prevState.score++;
+      return {guessed: prevState.guessed, score: prevState.score};
+    })
+  }
+
   badClick() {
-    // TEMP
-    console.log('bad click!');
+    this.setState({score: 0, guessed: {}})
+    document.getElementById('msg').innerHTML = 'You already guessed that one!';
   }
 
   shuffleArray() {
@@ -71,7 +77,7 @@ class App extends Component {
         </section>
         
         <section id='scoreboard'>
-          <Scoreboard />
+          <Scoreboard score={this.state.score} />
         </section>
       </main>
     );
