@@ -18,11 +18,13 @@ class App extends Component {
     } else {
       this.setState(prevState => {
         prevState.guessed[clickedImg] = true;
-        return {guessed: prevState.guessed};
+        prevState.score++;
+        return {guessed: prevState.guessed, score: prevState.score};
       })
     }
     this.shuffleBackSide();
     this.flipCards();
+    console.log(this.state);
   }
 
   shuffleBackSide() {
@@ -71,7 +73,7 @@ class App extends Component {
         </section>
         
         <section id='scoreboard'>
-          <Scoreboard />
+          <Scoreboard score={this.state.score} />
         </section>
       </main>
     );
