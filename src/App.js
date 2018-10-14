@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from "./components/Card";
+import Scoreboard from "./components/Scoreboard";
 import images from "./images.json";
 
 class App extends Component {
@@ -24,14 +25,14 @@ class App extends Component {
     this.flipCards();
   }
 
-  badClick() {
-    // TEMP
-    console.log('bad click!');
-  }
-
   shuffleBackSide() {
     const backSide = document.querySelector('.card').classList.contains('flip') ? 'front' : 'back';
     this.setState({[backSide]: this.shuffleArray()});
+  }
+
+  badClick() {
+    // TEMP
+    console.log('bad click!');
   }
 
   shuffleArray() {
@@ -70,7 +71,7 @@ class App extends Component {
         </section>
         
         <section id='scoreboard'>
-          Scores go here...
+          <Scoreboard />
         </section>
       </main>
     );
