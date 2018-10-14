@@ -1,0 +1,98 @@
+html, body, #root {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #fffafa;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  padding: 16px;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+section#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 550px;
+
+  position: relative;
+  bottom: 25px;
+}
+
+.card-container, .card-front, .card-back {
+  width: 175px;
+  height: 175px;
+}
+
+.card-container {
+  margin: 4px;
+  cursor: pointer;
+  overflow: hidden
+}
+
+.card {
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+#scoreboard {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
