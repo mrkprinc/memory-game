@@ -10,6 +10,10 @@ html, body, #root {
 
 body {
   text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #fffafa;
 }
 
 header {
@@ -91,36 +95,4 @@ section#cards {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.delay1 {
-  transition-delay: 0.05s;
-}
-
-.delay2 {
-  transition-delay: 0.10s;
-}
-
-.delay3 {
-  transition-delay: 0.15s;
-}
-
-.delay4 {
-  transition-delay: 0.20s;
-}
-
-.delay5 {
-  transition-delay: 0.25s;
-}
-
-.delay6 {
-  transition-delay: 0.30s;
-}
-
-.delay7 {
-  transition-delay: 0.35s;
-}
-
-.delay8 {
-  transition-delay: 0.40s;
 }
