@@ -22,11 +22,6 @@ class App extends Component {
     this.flipCards();
   }
 
-  shuffleBackSide() {
-    const backSide = document.querySelector('.card').classList.contains('flip') ? 'front' : 'back';
-    this.setState({[backSide]: this.shuffleArray()});
-  }
-
   goodClick(clickedImg) {
     document.getElementById('msg').innerHTML = "Don't click the same image twice!";
     this.setState(prevState => {
@@ -39,6 +34,11 @@ class App extends Component {
   badClick() {
     this.setState({score: 0, guessed: {}})
     document.getElementById('msg').innerHTML = 'You already guessed that one!';
+  }
+
+  shuffleBackSide() {
+    const backSide = document.querySelector('.card').classList.contains('flip') ? 'front' : 'back';
+    this.setState({[backSide]: this.shuffleArray()});
   }
 
   shuffleArray() {
@@ -73,7 +73,7 @@ class App extends Component {
         <header>Memory Game</header>
 
         <section id='cards'>
-          {cards}
+          {this.state.score < 9 ? cards : <span className='win-msg'>You win!</span>}
         </section>
         
         <section id='scoreboard'>
