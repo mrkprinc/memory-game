@@ -9,7 +9,7 @@ html, body, #root {
 }
 
 body {
-  min-width: 475px;
+  min-width: 400px;
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -103,7 +103,7 @@ section#cards {
 #scoreboard {
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: 90%;
 
   background-color: #fffafa;
   border: 2px solid #333;
@@ -130,11 +130,18 @@ section#cards {
   align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 570px) {
   .card-container, .card-front, .card-back {
-    width: 30vw;
-    height: 30vw;
+    width: 32vw;
+    height: 32vw;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card-container, .card-front, .card-back {
+    width: 130px;
+    height: 130px;
   }
 }
 
