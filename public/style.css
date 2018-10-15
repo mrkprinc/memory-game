@@ -9,6 +9,7 @@ html, body, #root {
 }
 
 body {
+  min-width: 475px;
   text-align: center;
   font-family: Arial, sans-serif;
   font-size: 16px;
@@ -84,6 +85,7 @@ section#cards {
   bottom: 0;
   width: 100%;
 
+  background-color: #fffafa;
   border: 2px solid #333;
   border-radius: 8px;
   padding: 8px;
@@ -106,4 +108,18 @@ section#cards {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .card-container, .card-front, .card-back {
+    width: 30vw;
+    height: 30vw;
+    margin: 0;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  header {
+    display: none;
+  }
 }
